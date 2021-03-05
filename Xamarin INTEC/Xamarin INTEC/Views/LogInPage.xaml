@@ -16,24 +16,26 @@
              />
             <Entry 
                 x:Name="emailEntry"
-                Placeholder="Email" 
+                Placeholder="Email"
+                Text="{Binding Email}"
              />
             <Entry 
                 x:Name="passwordEntry"
                 Placeholder="Password" 
+                Text="{Binding Password}"
                 IsPassword="True"
              />
             <Button 
                 Text="Login" 
                 TextColor="White"  
                 BackgroundColor="Red" 
-                Clicked="ButtonClicked1" 
+                Command="{Binding LogInCommand}" 
              />
             <Button
                 Text="Register"
                 TextColor="White"
                 BackgroundColor="Red"
-                Clicked="ButtonClicked"
+                Command="{Binding SignUpCommand}"
                 />
         </StackLayout>
     </ScrollView>

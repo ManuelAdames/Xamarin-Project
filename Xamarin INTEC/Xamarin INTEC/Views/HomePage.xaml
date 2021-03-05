@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:vm ="clr-namespace:Xamarin_INTEC.ViewModels"
+             x:Class="Xamarin_INTEC.Views.HomePage"
+             xmlns:pages="clr-namespace:Xamarin_INTEC"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+
+    >
+    <TabbedPage.BindingContext>
+        <vm:HomeViewModel/>
+    </TabbedPage.BindingContext>
+    <ContentPage Title="{Binding HomeOption.Title}" IconImageSource="{Binding HomeOption.Image}" BackgroundColor="LightGray"/>
+    <ContentPage Title="{Binding DiscoveryOption.Title}" IconImageSource="{Binding DiscoveryOption.Image}" BackgroundColor="LightGray">
+        <ScrollView>
+            <Grid Padding="10" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*" VerticalOptions="Center">
+                <Label Text="Discovery" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" TextColor="Black" FontSize="32" FontAttributes="Bold"/>
+                <Button BackgroundColor="White" Grid.Row="1" Grid.Column="0" Text="{Binding BarsAndHotels.Title}" TextColor="Black" ImageSource="beerimage.png" ContentLayout="Top,10" />
+            <Button BackgroundColor="White" Grid.Row="1" Grid.Column="1" Text="{Binding FineDining.Title}" TextColor="Black" ImageSource="Dining.png" ContentLayout="Top,10" />
+            <Button BackgroundColor="White" Grid.Row="2" Grid.Column="0" Text="{Binding Cafes.Title}"  TextColor="Black"  ImageSource="cafe.png" ContentLayout="Top,10"/>
+            <Button BackgroundColor="White" Grid.Row="2" Grid.Column="1" Text="{Binding FastFoods.Title}"  TextColor="Black"  ImageSource="fastfood2.png" ContentLayout="Top,10"/>
+            <Button BackgroundColor="White" Grid.Row="3" Grid.Column="1" Text="{Binding FeaturedFoods.Title}"  TextColor="Black"  ImageSource="pizza.png" ContentLayout="Top,10"/>
+            <Button BackgroundColor="White" Grid.Row="3" Grid.Column="0" Text="{Binding Nearby.Title}"  TextColor="Black" ImageSource="gpsmap.png" ContentLayout="Top,10"/>
+        </Grid>
+        </ScrollView>
+    </ContentPage>
+    <ContentPage Title="{Binding BookmarkOption.Title}"  IconImageSource="{Binding BookmarkOption.Image}"/>
+    <ContentPage Title="{Binding TopFoodsOption.Title}" IconImageSource="{Binding TopFoodsOption.Image}"/>
+    <ContentPage Title="{Binding ProfileOption.Title}" IconImageSource="{Binding TopFoodsOption.Image}"/>
+
+</TabbedPage>
